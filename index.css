@@ -1,0 +1,52 @@
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Global Theme Defaults */
+.dark body {
+  background-color: #09090b; /* Zinc-950 */
+  color: #e4e4e7; /* Zinc-200 */
+}
+
+html:not(.dark) body {
+  background-color: #f9fafb; /* Gray-50 */
+  color: #111827; /* Gray-900 */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #18181b; 
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626; 
+}
+
+.glass-panel {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(12px);
+}
+.dark .glass-panel {
+  background: rgba(24, 24, 27, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
